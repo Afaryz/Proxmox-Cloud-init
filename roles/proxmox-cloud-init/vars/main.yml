@@ -1,0 +1,3 @@
+---
+proxmoxworker: localhost
+template_id: "9999"

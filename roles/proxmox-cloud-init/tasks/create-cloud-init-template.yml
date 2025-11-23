@@ -1,0 +1,29 @@
+---
+- name: Create Directory
+  ansible.builtin.file:
+    path: "/opt/cow2"
+    owner: root
+    group: root
+    mode: "0700"
+
+- name: Download generic Debian-cloud-cow2-image
+  ansible.builtin.get_url:
+    url: "https://cdimage.debian.org/images/cloud/trixie/20251117-2299/debian-13-generic-amd64-20251117-2299.qcow2"
+    dest: "/opt/cow2/debian-13-generic-amd64-20251117-2299.qcow2"
+    checksum: "1882f2d0debfb52254db1b0fc850d222fa68470a644a914d181f744ac1511a6caa1835368362db6dee88504a13c726b3ee9de0e43648353f62e90e075f497026"
+
+- name: Create VM
+  delegate_to: "{{ proxmoxworker }}"
+  community.proxmox.proxmox_kvm:
+    vmid: "{{ template_id }}"
+    api_user: root@pam
+    api_password: xxxx
+    api_host: "{{ inventory_hostname }}"
+    node: "{{ node }}"
+    hostname: "debian13-ci"
+    cpu: "host"
+    cores: 1
+    memory: 4096
+    net:
+      net0: 'virtio,bridge=vmbr0'
+    scsihw: virtio-scsi-single
