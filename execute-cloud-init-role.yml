@@ -9,5 +9,6 @@
         name: proxmoxer
         state: present
       delegate_to: "{{ proxmoxworker | default('localhost') }}"
+      become: false
   roles:
     - proxmox-cloud-init

@@ -1,3 +1,1 @@
-#SPDX-License-Identifier: MIT-0
----
-# defaults file for proxmox-cloud-init
+qcow_path: "/var/lib/vz/template/cow2"
