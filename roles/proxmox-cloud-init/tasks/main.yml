@@ -1,2 +1,2 @@
 - name: Create Cloud Init Template
-  include_task: create-cloud-init-template.yml
+  include_tasks: create-cloud-init-template.yml
