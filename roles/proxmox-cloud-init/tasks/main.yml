@@ -1,6 +1,2 @@
-#SPDX-License-Identifier: MIT-0
----
-# tasks file for proxmox-cloud-init
 - name: Create Cloud Init Template
-  include_task:
-    - create-cloud-init-template.yml
+  include_task: create-cloud-init-template.yml
