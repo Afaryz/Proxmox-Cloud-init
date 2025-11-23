@@ -22,7 +22,7 @@
     api_password: "{{ api_key }}"
     api_host: "{{ inventory_hostname }}"
     node: "{{ node }}"
-    hostname: "debian13-ci"
+    name: "debian13-ci"
     cpu: "host"
     cores: 1
     memory: 4096
