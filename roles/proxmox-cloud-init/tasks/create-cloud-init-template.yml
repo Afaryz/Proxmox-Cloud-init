@@ -29,6 +29,5 @@
     net:
       net0: 'virtio,bridge=vmbr0'
     scsihw: virtio-scsi-single
-    serial: 
-      - serial0:socket
+    serial: '{"serial0":"socket"}'
     vga: serial
