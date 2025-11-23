@@ -15,6 +15,7 @@
 
 - name: Create VM
   delegate_to: "{{ proxmoxworker }}"
+  become: false
   community.proxmox.proxmox_kvm:
     vmid: "{{ template_id }}"
     api_user: root@pam
