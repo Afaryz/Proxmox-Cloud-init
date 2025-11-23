@@ -5,6 +5,7 @@
     owner: root
     group: root
     mode: "0741"
+    state: directory
 
 - name: Download generic Debian-cloud-cow2-image
   ansible.builtin.get_url:
