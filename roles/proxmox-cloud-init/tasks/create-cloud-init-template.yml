@@ -18,8 +18,8 @@
   become: false
   community.proxmox.proxmox_kvm:
     vmid: "{{ template_id }}"
-    api_user: "root@pam"
-    api_password: "{{ api_key }}"
+    api_token_id: "root@pam"
+    api_token_secret: "{{ api_key }}"
     api_host: "{{ inventory_hostname }}"
     node: "{{ node }}"
     name: "debian13-ci"
