@@ -18,7 +18,7 @@
   become: false
   community.proxmox.proxmox_kvm:
     vmid: "{{ template_id }}"
-    api_user: "root"
+    api_user: "root@pam"
     api_token_id: "ansible"
     api_token_secret: "{{ api_key }}"
     api_host: "{{ inventory_hostname }}"
